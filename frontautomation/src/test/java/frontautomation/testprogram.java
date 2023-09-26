@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 public class testprogram {
  static WebDriver browser;
  @BeforeClass
- public void setup()
+ public void setup() throws InterruptedException
  {
 	 //WebDriverManager.chromedriver().setup();
 	 ChromeOptions cap = new ChromeOptions();
@@ -26,6 +26,7 @@ public class testprogram {
      //browser = new ChromeDriver();
      browser.get("https://demoqa.com/text-box");
      browser.manage().window().maximize();
+     Thread.sleep(2000);
      browser.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	 
  }
